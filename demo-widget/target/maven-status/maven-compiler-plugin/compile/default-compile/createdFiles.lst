@@ -1,0 +1,6 @@
+com\intland\codebeamer\dashboard\component\widgets\demo\DemoWidgetInformation.class
+com\intland\codebeamer\dashboard\component\widgets\demo\DemoWidgetHtmlRenderer.class
+com\intland\codebeamer\dashboard\component\widgets\demo\DemoWidget$Attribute.class
+com\intland\codebeamer\dashboard\component\widgets\demo\DemoWidgetEditorRenderer.class
+com\intland\codebeamer\dashboard\component\widgets\demo\DemoWidget.class
+com\intland\codebeamer\dashboard\component\widgets\demo\DemoWidgetFactory.class
