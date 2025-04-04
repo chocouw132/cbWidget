@@ -19,7 +19,7 @@
   </properties>
 
   <dependencies>
-    <!-- 기존 의존성 -->
+    <!-- 기존 의존성1 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
