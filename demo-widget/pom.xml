@@ -15,7 +15,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
-    <cbPath>C:\CB-3.0.0.0\tomcat\webapps\cb\WEB-INF\lib\cb-2.2.0.2.jar</cbPath>
+    <cbPath>C:\CB-3.0.0.0\tomcat\webapps\cb\WEB-INF\lib\cb-3.0.0.0.jar</cbPath>
   </properties>
 
   <dependencies>
@@ -52,7 +52,7 @@
       <artifactId>cb</artifactId>
       <version>8.1</version>
       <scope>system</scope>
-      <systemPath>C:/CB-2.2.0.2/tomcat/webapps/cb/WEB-INF/lib/cb-2.2.0.2.jar</systemPath>
+      <systemPath>${cbPath}</systemPath>
     </dependency>
 
     <!-- JUnit 5 테스트 -->
