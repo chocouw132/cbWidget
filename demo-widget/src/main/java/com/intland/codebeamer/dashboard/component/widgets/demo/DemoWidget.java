@@ -25,7 +25,7 @@ public class DemoWidget extends AbstractWidget {
 	private static final String VERSION = "1.0.0";
 
 	public static enum Attribute implements WidgetAttributeWrapper {
-		GREETING("greeting", new StringAttribute("Hello World!", false, false));
+		GREETING("greeting", new StringAttribute("쓰리피체인 위젯 테스트", false, false));
 
 		private String key;
 		private WidgetAttribute<?> defaultValue;
