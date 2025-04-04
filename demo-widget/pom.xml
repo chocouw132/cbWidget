@@ -52,7 +52,7 @@
       <artifactId>cb</artifactId>
       <version>8.1</version>
       <scope>system</scope>
-      <systemPath>${cbPath}</systemPath>
+      <systemPath>C:/CB-2.2.0.2/tomcat/webapps/cb/WEB-INF/lib/cb-2.2.0.2.jar</systemPath>
     </dependency>
 
     <!-- JUnit 5 테스트 -->
