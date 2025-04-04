@@ -1,5 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.intland.codebeamer</groupId>
@@ -12,76 +13,88 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>8</maven.compiler.source> <!-- 소스 버전 설정 -->
-    <maven.compiler.target>8</maven.compiler.target> <!-- 타겟 버전 설정 -->
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
     <cbPath>C:\CB-3.0.0.0\tomcat\webapps\cb\WEB-INF\lib\cb-3.0.0.0.jar</cbPath>
   </properties>
 
   <dependencies>
+    <!-- 기존 의존성 -->
     <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-beans</artifactId>
-    	<version>3.2.11.RELEASE</version>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>3.2.11.RELEASE</version>
     </dependency>
     <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-context</artifactId>
-    	<version>3.2.11.RELEASE</version>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>3.2.11.RELEASE</version>
     </dependency>
     <dependency>
-    	<groupId>com.fasterxml.jackson.core</groupId>
-    	<artifactId>jackson-annotations</artifactId>
-    	<version>2.5.4</version>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.5.4</version>
     </dependency>
     <dependency>
-    	<groupId>com.fasterxml.jackson.core</groupId>
-    	<artifactId>jackson-databind</artifactId>
-    	<version>2.5.4</version>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.5.4</version>
     </dependency>
     <dependency>
-    	<groupId>org.apache.velocity</groupId>
-    	<artifactId>velocity</artifactId>
-    	<version>1.7</version>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>1.7</version>
     </dependency>
+
+    <!-- 시스템 의존성 -->
     <dependency>
-    	<groupId>cb</groupId>
-    	<artifactId>cb</artifactId>
-    	<scope>system</scope>
-    	<version>8.1</version>
-    	<systemPath>${cbPath}</systemPath>
+      <groupId>cb</groupId>
+      <artifactId>cb</artifactId>
+      <version>8.1</version>
+      <scope>system</scope>
+      <systemPath>${cbPath}</systemPath>
     </dependency>
-    <!-- ✅ JUnit 5 추가 -->
+
+    <!-- JUnit 5 테스트 -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <version>5.9.3</version>
       <scope>test</scope>
     </dependency>
-    
+
+    <!-- JUnit 5 .xml 리포팅 활성화 -->
     <dependency>
-	  <groupId>org.apache.commons</groupId>
-	  <artifactId>commons-lang3</artifactId>
-	  <version>3.12.0</version>
-	</dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-reporting</artifactId>
+      <version>1.9.3</version>
+    </dependency>
 
+    <!-- 테스트 중 사용하는 유틸 의존성 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version>
+    </dependency>
   </dependencies>
-  
-	<build>
-	  <plugins>
-	    <plugin>
-	      <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-surefire-plugin</artifactId>
-	      <version>3.0.0-M7</version>
-	      <configuration>
-	        <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-	        <useFile>true</useFile>
-	        <includes>
-	          <include>**/*Test.java</include>
-	        </includes>
-	      </configuration>
-	    </plugin>
-	  </plugins>
-	</build>
 
-
+  <build>
+    <plugins>
+      <!-- JUnit 실행용 플러그인 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+        <configuration>
+          <useFile>true</useFile>
+          <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+          <reportFormat>brief</reportFormat>
+          <printSummary>true</printSummary>
+          <includes>
+            <include>**/*Test.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
