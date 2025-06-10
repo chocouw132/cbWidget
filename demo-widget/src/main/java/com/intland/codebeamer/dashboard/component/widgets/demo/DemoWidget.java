@@ -16,7 +16,7 @@ import com.intland.codebeamer.dashboard.component.widgets.common.attribute.Widge
 
 /**
  * @author <a href="mailto:mark.szabo@intland.com">Mark Szabo</a>
- * 
+ * 주석 추가
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder(alphabetic=true)
